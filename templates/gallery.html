@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../static/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../static/css/homestyle.css" />
+    <script src="../static/../static/js/jquery-3.2.1.min.js"></script>
+    <script src="../static/../static/js/popper.min.js"></script>
+    <script src="../static/../static/js/bootstrap.js"></script>
+    <title>Gallery Page</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="../static///maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="../static///code.jquery.com/jquery-1.11.1.min.js"></script>
+    <style>
+        .gallery-title {
+            font-size: 36px;
+            color: #42B32F;
+            text-align: center;
+            font-weight: 500;
+            margin-bottom: 70px;
+        }
+        
+        .gallery-title:after {
+            content: "";
+            position: absolute;
+            width: 7.5%;
+            left: 46.5%;
+            height: 45px;
+            border-bottom: 1px solid #5e5e5e;
+        }
+        
+        .filter-button {
+            font-size: 18px;
+            border: 1px solid #42B32F;
+            border-radius: 5px;
+            text-align: center;
+            color: #42B32F;
+            margin-bottom: 30px;
+        }
+        
+        .filter-button:hover {
+            font-size: 18px;
+            border: 1px solid #42B32F;
+            border-radius: 5px;
+            text-align: center;
+            color: #ffffff;
+            background-color: #42B32F;
+        }
+        
+        .btn-default:active .filter-button:active {
+            background-color: #42B32F;
+            color: white;
+        }
+        
+        .port-image {
+            width: 100%;
+        }
+        
+        .gallery_product {
+            margin-bottom: 30px;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $(".filter-button").click(function() {
+                var value = $(this).attr('data-filter');
+
+                if (value == "all") {
+                    //$('.filter').removeClass('hidden');
+                    $('.filter').show('1000');
+                } else {
+                    //            $('.filter[filter-item="'+value+'"]').removeClass('hidden');
+                    //            $(".filter").not('.filter[filter-item="'+value+'"]').addClass('hidden');
+                    $(".filter").not('.' + value).hide('3000');
+                    $('.filter').filter('.' + value).show('3000');
+
+                }
+            });
+
+            if ($(".filter-button").removeClass("active")) {
+                $(this).removeClass("active");
+            }
+            $(this).addClass("active");
+
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!-- Header/menu bar -->
+
+        <div class="row menurow sticky-top">
+            <div class="col-sm-2">
+                <div class="imgsec">
+                    <img src="../static/image/logo.png" alt="" class="imgstyle" />
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <p class="textstyle">Shubhangi</p>
+            </div>
+            <div class="col-sm-4">
+                <nav class="navbar navbar-expand-sm navbar-light">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+                    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/">
+                                    <font size="3"><b>Home </b></font><span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/About">
+                                    <font size="3"><b>About</b></font>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Gallery">
+                                    <font size="3"><b>Gallery</b></font>
+                                </a>
+                            </li>
+
+
+                            <!-- <li class="nav-item">
+                  <a class="nav-link" href="booking.html"><font size="3"><b>Booking</b></font></a>
+                </li> -->
+                            <!-- <li class="nav-item dropdown dmenu">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                      Dropdown link
+                    </a>
+                    <div class="dropdown-menu sm-menu">
+                      <a class="dropdown-item" href="#">Link 1</a>
+                      <a class="dropdown-item" href="#">Link 2</a>
+                      <a class="dropdown-item" href="#">Link 3</a>
+                      <a class="dropdown-item" href="#">Link 4</a>
+                      <a class="dropdown-item" href="#">Link 5</a>
+                      <a class="dropdown-item" href="#">Link 6</a>
+                    </div>
+                  </li> -->
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+        </div><br>
+
+
+        <!-- carousel part -->
+
+
+
+        <!------ Include the above in your HEAD tag ---------->
+
+        <div class="container">
+            <div class="row">
+                <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <br>
+                    <h1 class="gallery-title">
+                        <font color="#8B008B" size="6"><b>GALLERY FOR OUR ALL SERVICES</b></font>
+                    </h1>
+                </div>
+
+                <div align="center">
+                    <button class="btn btn-default filter-button" data-filter="all">All SERVICES</button>
+                    <button class="btn btn-default filter-button" data-filter="hdpe">FOR FACIAL</button>
+                    <button class="btn btn-default filter-button" data-filter="sprinkle"> FOR MANICURE AND PEDICURE</button>
+                    <button class="btn btn-default filter-button" data-filter="spray">FOR WAXING</button>
+                    <button class="btn btn-default filter-button" data-filter="irrigation">FOR HAIR SPA</button>
+                </div>
+                <br>
+                <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
+                    <img src="../static/image/f1.jpg" class="img-fluid">
+                </div>
+
+                <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter sprinkle">
+                    <img src="../static/image/m1.jpg" class="img-fluid">
+                </div>
+
+                <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
+                    <img src="../static/image/f2.jpg" class="img-fluid">
+                </div>
+
+                <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter irrigation">
+                    <img src="../static/image/h1.jpg" class="img-fluid">
+                </div>
+
+                <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter spray">
+                    <img src="../static/image/w2.jpg" class="img-fluid">
+                </div>
+
+                <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter irrigation">
+                    <img src="../static/image/h2.jpg" class="img-fluid">
+                </div>
+
+                <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter spray">
+                    <img src="../static/image/w1.jpg" class="img-fluid">
+                </div>
+
+                <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter irrigation">
+                    <img src="../static/image/h3.jpg" class="img-fluid">
+                </div>
+
+                <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter irrigation">
+                    <img src="../static/image/h4.jpg" class="img-fluid">
+                </div>
+
+                <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
+                    <img src="../static/image/f2.jpg" class="img-fluid">
+                </div>
+
+                <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter spray">
+                    <img src="../static/image/w4.jpg" class="img-fluid">
+                </div>
+
+                <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter sprinkle">
+                    <img src="../static/image/m2.jpg" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        </section>
+
+
+
+        <!-- footer part -->
+        <footer class="container-fluid bg-grey py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-6 ">
+                                <div class="logo-part">
+                                    <img src="../static/image/logo.png" class="w-50 logo-footer img-thumbnail rounded-circle">
+                                    <p>Aarti Makeup Studio & Boutique</p>
+                                    <p>My makeup studio is a reflection of who you are as a makeup artist and the beautiful services you provide to clients.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 px-4">
+                                <h6> About Company</h6>
+                                <p>The Permanent Makeup Studio of Virginia is a reputable permanent makeup facility located in Virginia Beach,</p>
+                                <a href="#" class="btn-footer"> More Info </a><br>
+                                <a href="#" class="btn-footer"> Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-6 px-4">
+                                <h6> Some Link </h6>
+                                <div class="row ">
+                                    <div class="col-md-6">
+                                        <ul>
+                                            <li> <a href="index.html"> Home</a> </li>
+                                            <li> <a href="about.html"> About</a> </li>
+                                            <li> <a href="#"> Gallery</a> </li>
+                                            <li> <a href="contact.html"> Contact</a> </li>
+                                            <!-- <li> <a href="booking.html"> Booking</a> </li> -->
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6 px-4">
+                                        <ul>
+                                            <li> <a href="#"> Terms</a> </li>
+                                            <li> <a href="#"> Policy</a> </li>
+                                            <li> <a href="#"> Refunds</a> </li>
+                                            <li> <a href="#"> Payment</a> </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 ">
+                                <h6> Newsletter</h6>
+                                <div class="social">
+                                    <a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                    <a href="https://www.instagram.com/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                </div>
+                                <form class="form-footer my-3">
+                                    <input type="text" placeholder="search here...." name="search">
+                                    <input type="button" value="Go">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+
+    </div>
+</body>
+
+</html>
